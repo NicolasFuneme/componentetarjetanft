@@ -1,0 +1,179 @@
+:root { 
+--Softlue: hsl(215, 51%, 70%);
+--Cyan: hsl(178, 100%, 50%);
+--White: hsl(0, 0%, 100%);
+--blue: hsl(228, 45%, 44%); 
+--VeryDarkBlue: /*(main BG)*/  hsl(217, 54%, 11%);
+--VeryDarkBlue1: /*(card BG)*/ hsl(216, 50%, 16%); 
+--VeryDarkBlue2: /*(line)*/ hsl(215, 32%, 27%);
+--fuente: 'Outfit', sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+} 
+
+body {
+    background-color: var(--VeryDarkBlue);
+    font-family: var(--fuente);
+    font-size: 1.8rem;
+    padding: 1.5rem;
+}
+
+ul {
+    list-style-type: none;/*quita el marcador de la lista*/
+}
+
+a {
+    color: var(--White);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--Cyan);
+    transition: 0.8s ease;
+}
+
+/*--CONTENEDOR--*/
+
+.contenedor {
+    display: grid;
+    background-color: var(--VeryDarkBlue1);
+    padding: 2rem;
+    /* margin: 10rem 2rem 0 2rem; *//*sustituimos esto por padiing en body*/
+    border-radius: 1.3rem;
+}
+@media (min-width: 768px) {
+    .contenedor {
+        width: 50%;
+        margin: 10rem auto;
+    }
+}
+@media (min-width: 980px) {
+    .contenedor {
+        width: 30%;
+        margin: 5rem auto;
+    }
+}
+@media (min-width: 1281px) {
+    .contenedor {       
+        width: 27%;
+        margin: 12rem auto;
+    }
+}
+
+/*IMAGEN*/
+
+.contenedor_imagen {/*gracias a que las imagenes estan dentro de este contenerdor se puede posicionar la imagen sobre puesta*/
+    width: 100;
+    cursor: pointer;
+    position: relative;
+}
+
+.imagen {
+    width: 100%;   
+    border-radius: 1rem;
+}
+
+.icono-ojo {/*con este codigo posicionamos la imagen sobrepuesta*/
+    position: absolute;
+    background-color: var(--Softlue);
+    border-radius: 1rem;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    opacity: 0;/*hace la imagen tranparente*/
+    transition: opacity 0.5s ease ; /*hace mas suave la transicion de color*/
+}
+
+.img-ojo {/*este codigo ponemos el icono de ojo totalmente centrado */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contenedor_imagen:hover .icono-ojo {
+    opacity: 0.7;
+}
+
+/*INFORMACION*/
+
+.titulo {
+    font-weight: 600;
+}
+
+.informacion {
+    color: var(--Softlue);
+    font-weight: 300;
+    line-height: 1.6;
+
+}
+
+.contenedor ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.contenedor ul li {
+    display: flex;
+    letter-spacing: 0.1rem;
+}
+ul.informacion-adicional {
+    margin-left: -4rem;
+}
+
+
+.icono {
+margin-right: 0.7rem;
+}
+.item1 {
+    color: var(--Cyan);
+}
+.item2 {
+    color: var(--Softlue);
+    font-weight: 600;
+}
+
+.creadora {
+    border-top: 1px solid;
+    border-color: var(--VeryDarkBlue2);
+    
+}
+.creadora img {
+    width: 4.5rem;/*tamaño imagen*/
+    border: 1px solid;
+    border-radius: 50%; /*para hacer un circulo perfecto*/
+    border-color: var(--White);
+    margin-right: 1.5rem;
+}
+
+.creadora1 {
+    margin-top: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.creadora-info{
+    color: var(--Softlue);
+}
+.creadora-nombre {
+    margin-left: 0.5rem;
+    font-weight: 400;
+}
+
+.attribution {
+    margin:  10%;
+    font-size: 12px;
+    text-align: center; 
+}
+.attribution a { 
+    color: var(--White);
+    text-decoration: none;
+}
+.attribution a:hover {
+    color: var(--Cyan);
+}
